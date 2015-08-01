@@ -1,0 +1,26 @@
+{
+  "name": "ember-services-tutorial",
+  "version": "1.0.0",
+  "description": "tutorial ember-services-tutorial",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:juancarlosqr/program-with-erik-tuts.git"
+  },
+  "keywords": [
+    "ember,sockets"
+  ],
+  "private": true,
+  "author": "juancarlosqr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juancarlosqr/program-with-erik-tuts/issues"
+  },
+  "homepage": "https://github.com/juancarlosqr/program-with-erik-tuts#readme",
+  "dependencies": {
+    "sockjs": "^0.3.15"
+  }
+}
