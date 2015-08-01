@@ -1,2 +1,3 @@
-# program-with-erik-tuts
-Code for tutorials of programwitherik.com
+# Tuts from Program With Erik
+
+Code of tutorials from [programwitherik.com](programwitherik.com)

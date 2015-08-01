@@ -1,0 +1,17 @@
+{
+  "name": "socket-io-tutorial-with-node-js-and-express",
+  "version": "0.0.1",
+  "homepage": "https://github.com/juancarlosqr/program-with-erik-tuts",
+  "authors": [
+    "Juan Carlos Quintero <jcquintero.ce@gmail.com>"
+  ],
+  "description": "socket-io-tutorial-with-node-js-and-express",
+  "main": "index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

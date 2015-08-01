@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css">
+        <style type="text/css">
+        #chat {
+            margin-top: 30px;
+        }
+        p span {
+            font-weight: bold;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <h1>Chat Room</h1>
+        <form class="form-inline">
+            <input id="chat_name" type="text"
+                class="form-control" placeholder="Your nickname" disabled>
+            <input id="chat_message" type="text"
+                class="form-control" placeholder="Your message" disabled>
+            <input type="submit" value="Send" class="btn btn-primary">
+        </form>
+        <div id="chat"></div>
+    </div>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    (function ($) {
+        var app = {
+                socket: io.connect('http://localhost:4200'),
+                form: $('form'),
+                chat: $('#chat'),
+                name: $('#chat_name'),
+                message: $('#chat_message'),
+                color: '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6),
+                log: function (data) {
+                    app.chat.append(app.buildMessage(data));
+                },
+                connect: function (data) {
+                    app.socket.emit('join', 'Hi server!');
+                    app.name.removeAttr('disabled').focus();
+                    app.message.removeAttr('disabled');
+                },
+                buildMessage: function(data) {
+                    return '<p><span style="color:' + data.color + '">'+data.name+'</span>: ' + data.message + '</p>'
+                }
+            };
+        app.socket.on('connect', app.connect);
+        app.socket.on('messages', app.log);
+        app.socket.on('broad', app.log);
+        app.form.on('submit', function(e){
+            e.preventDefault();
+            app.socket.emit('messages', {
+                name: app.name.val(),
+                message: app.message.val(),
+                color: app.color
+            });
+            app.message.val('').focus();
+        });
+    }(jQuery));
+    </script>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "socket-io-tutorial-with-node-js-and-express",
+  "version": "1.0.0",
+  "description": "tutorial socket-io-tutorial-with-node-js-and-express",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "juancarlosqr",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.2",
+    "socket.io": "^1.3.6"
+  }
+}
