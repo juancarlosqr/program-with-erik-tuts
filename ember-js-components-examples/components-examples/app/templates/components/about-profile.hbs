@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-lg-4 col-sm-6 text-center" {{action "over" on="mouseEnter"}}>
+        <div {{action "out" on="mouseLeave"}}>
+            {{#if overDiv}}
+                <p>
+                    You are over div now!
+                </p>
+            {{/if}}
+            <img class="img-circle img-responsive img-center" src="{{image}}" alt="">
+            <h3>{{name}}
+                <small>{{title}}</small>
+            </h3>
+            <a href="{{twitter}}">Twitter</a>
+        </div>
+    </div>
+</div>
