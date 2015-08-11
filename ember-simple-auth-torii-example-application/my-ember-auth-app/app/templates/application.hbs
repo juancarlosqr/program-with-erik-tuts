@@ -1,0 +1,15 @@
+<h1 id="title">Welcome to Ember</h1>
+
+{{link-to 'Home' 'index'}}
+
+{{link-to 'Protected' 'protected'}}
+
+{{link-to 'Public' 'public'}}
+
+{{#if session.isAuthenticated}}
+    {{link-to 'Logout' 'logout'}}
+{{else}}
+    {{link-to 'Login' 'login'}}
+{{/if}}
+
+{{outlet}}
