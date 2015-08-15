@@ -1,5 +1,12 @@
-{{#if session.isAuthenticated}}
-    <h2>Hi logged in user!</h2>
-{{else}}
-    <h2>Hi guest user</h2>
-{{/if}}
+<div class="jumbotron">
+    <h1>Home</h1>
+    {{#if session.isAuthenticated}}
+        <p>
+            <strong>Well done!</strong> You are successfully authenticated
+        </p>
+    {{else}}
+        <p>
+            <strong>Hi Guest user!</strong> {{link-to 'Login' 'login'}} to see more
+        </p>
+    {{/if}}
+</div>
